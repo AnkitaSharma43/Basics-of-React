@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./form.css";
+import { useNavigate } from 'react-router-dom';
 const Form = () => {
+    const navigate = useNavigate()
+    const authAccess = localStorage.getItem("userName")
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [data, setData] = useState()
@@ -14,6 +17,7 @@ const Form = () => {
         // )
         localStorage.setItem('userName', name)
         localStorage.setItem('userEmail', email)
+        navigate("/")
     }
     const handleRemove = () => {
         localStorage.removeItem('userName')
@@ -25,6 +29,13 @@ const Form = () => {
         let container = localStorage.getItem("userName")
         setData(container)
     }
+
+  
+    useEffect(()=>{
+      if(authAccess){
+        navigate("/")
+      }
+    },[authAccess])
 
     return (
         <>

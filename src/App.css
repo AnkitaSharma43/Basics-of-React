@@ -1,38 +1,241 @@
-.App {
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+header {
+  background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+.max-width {
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.menus ul {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+}
+
+.menus ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menus ul li {
+  position: relative;
+}
+
+.menus ul li:before {
+  content: '';
+  border-bottom: 2px solid #fff;
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  width: 13px;
+}
+
+.menus ul li:hover:before {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+/* login form */
+.login-form form {
+  height: 260px;
+  width: 100%;
+  /* max-width: 250px; */
+}
+
+.login-form h6 {
+  text-align: right;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.login-form .input-feild {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  width: 100%;
+  gap: 12px;
+}
+
+.login-form label {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: 100px;
+  text-align: left;
+}
+
+.login-form input {
+  width: 100%;
+  border: 1px solid #ccc;
+  height: 27px;
+  padding-left: 6px;
+  border-radius: 6px;
+}
+
+.login-form input:focus-visible {
+  outline: none;
+}
+
+.login-form .btn3d.btn-success {
+  margin: 0;
+  height: 35px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TO DO WRAP */
+.relative {
+  position: relative;
+}
+
+.todo-wrap {
+  background: linear-gradient(90deg, #00f2ff50 0%, #3a47d550 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  color: #111;
+  border-top-left-radius: 7px;
+  width: 100%;
+  max-width: 475px;
+  min-height: 200px;
+  border-top-right-radius: 7px;
+}
+
+.todo-wrap input {
+  margin: 25px auto;
+  width: 95%;
+  flex: 1;
+  outline: none;
+  padding: 0.8rem 0.6rem;
+  border: 1px solid #200648;
+  background: none;
+  border-radius: 10px;
+  font-size: 16px;
+
+  box-shadow: -4px -4px 6px #160122, 4px 4px 10px #0c0015;
+  transition: border 0.4s ease;
+}
+
+.todo-wrap input::placeholder {
+  color: #030b3d;
+  font-size: 16px;
+  letter-spacing: 1;
+}
+
+.todo-content ul li {
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: scale 1s ease;
+  box-shadow: -4px -4px 5px #200441, 4px 4px 5px #000000;
+  position: relative;
+  padding: 16px;
+}
+
+.todo-content {
+  background: #f7f7f700;
+
+}
+
+.todo-content ul li:hover {
+  scale: 1.04;
+  transition: 0ms;
+  border-left: 4px solid #49149a;
+  border-right: 4px solid #49149a;
+}
+
+.todo-wrap input:focus-visible {
+  outline: none;
+}
+
+.todo-content ul li:hover,
+.todo-content ul li:focus,
+.todo-content ul li:focus-visible {
+  background-color: #fff;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.todo-input {
+  position: relative;
+  width: 100%;
+}
+
+.todo-wrap button.position-btn {
+
+  font-size: 16px;
+  color: #24044b;
+  border: none;
+  background: white;
+  position: absolute;
+  top: 31px;
+  right: 10px;
+
+}
+
+.todo-input button:hover,
+.todo-input button:focus {
+  box-shadow: -4px -4px 5px #200441, 4px 4px 5px #030b3d;
+}
+
+.todo-content ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-wrap {
+  background: linear-gradient(90deg, #00f2ff50 0%, #3a47d550 100%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 475px;
+  padding: 20px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }

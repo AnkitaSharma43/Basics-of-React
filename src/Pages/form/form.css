@@ -38,7 +38,7 @@ form {
     flex-direction: column;
     align-items: center;
     align-content: center;
-    height: 100svh;
+   
 }
 
 .form-feild input {
@@ -94,7 +94,7 @@ button{
 	top: -6px;
 	border: 0;
 	transition: all 40ms linear;
-	margin-top: 10px;
+	margin-top: 10px;             
 	margin-bottom: 10px;
 	/* margin-left: 20px; */
 	margin-right: 20px;
@@ -162,3 +162,4 @@ button{
 
 
 
+          
