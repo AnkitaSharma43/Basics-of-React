@@ -78,9 +78,9 @@ const TodoList = () => {
                                     )}
                                     <div className="user">
                                         {editTask === task.id ? (
-                                            {/* <button onClick={(e) => handleAddOrEdit(e, task.id)}>
+                                            <button onClick={(e) => handleAddOrEdit(e, task.id)}>
                                                 Save
-                                            </button> */}
+                                            </button>
                                         ) : (
                                             <FaEdit
                                                 color="#28094d"
