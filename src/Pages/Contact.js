@@ -3,7 +3,7 @@ import Form from "./form/form";
 const Contact = () => {
   return (
     <>
-      contact
+    This is contact Page
     </>
   )
 }
